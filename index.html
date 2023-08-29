@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en"
+data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunting Phone API</title>
+    <!-- daisyui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+<body>
+    <header class="bg-teal-50 flex flex-col  pb-[23%]">
+      <nav>
+        <section class=" pt-[50px] flex flex-row justify-between mx-[30px] md:mx-[50px] lg:mx-[150px]">
+          <h1 class="text-[25px] font-bold text-[#403F3F]">Hot Gadgets</h1>
+          <button class="btn btn-primary text-white bg-blue-700">Sign Up</button>
+        </section>
+      </nav>
+      <div id="hero-part flex flex-col gap-[25px]">
+        <h1 class="text-[65px] font-semibold text-center">Apple Iphone 13 Pro Max</h1>
+        <p class="text-center mt-[25px] mx-auto text-[18px] text-[#706F6F] w-[45%]">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humou.</p>
+        <button class="btn btn-primary mt-[40px] text-white bg-blue-700 flex mx-[auto]">Buy Now</button>
+      </div>
+    </header>
+    <div id="banner-images" class="flex flex-row gap-[50px] justify-center items-center [80px] mt-[70px] mb-[50px]">
+      <img src="./images/Apple iPhone 13 pro max.png" class="left-banner-image " alt="">
+      <img src="./images/Apple iPhone 13 pro max.png" class="middle-banner-image " alt="">
+      <img src="./images/Apple iPhone 13 pro max.png" class="right-banner-image " alt="">
+    </div>
+    <main>
+        <!-- Search -->
+        <section class="search-pannel mx-[30px] md:mx-[50px] lg:mx-[150px] lg:mt-10 flex flex-col mb-10 " >
+            <div>
+                <h1 class="text-center font-extrabold text-[35px]">Search your phone</h1>
+            </div>
+            <div class="mt-[30px] flex flex-row items-center justify-center ">
+                <input id="search-field" type="text"  placeholder="🔍 Search your phone" class="input input-bordered rounded-r-none w-full max-w-xs bg-gray-200" />
+                <button onclick="handleSearch()" class="btn rounded-l-none btn-accent bg-blue-700 text-white">Search</button>
+            </div> 
+            <div id="not_found"  class="hidden text-center mt-5 mb-[-20px] font-semibold">
+              
+            </div>
+        </section>
+        <!-- Posts section -->
+        <section class="mx-[30px] md:mx-[50px] lg:mx-[150px] lg:mt-10 lg: mb-[100px]">
+            <!-- Loader -->
+            <div id="loading-spinner" class="text-center my-[10%]  hidden">
+                <h1 class="text-center font-bold text-[25px] mb-[-20px] text-primary">Loading</h1>
+                <span class="loading loading-infinity loading-lg text-primary w-[10rem]"></span>
+            </div>
+            <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  ">
+            </div>
+            <!-- show all button -->
+            <div id="show-all-container" class="hidden flex flex-col mx-auto w-[80%] lg:w-[10%] mt-10">
+              <button onclick="handleShowAll()" class=" btn rounded-lg btn-accent bg-blue-700 text-white">Show All</button>
+            </div>
+        </section>
+        <!-- show details modal  -->
+        <!-- Open the modal using ID.showModal() method -->
+<dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle ">
+  <form method="dialog" class="modal-box max-h-full " >
+    <div id="show_detail_container">
+
+    </div>
+    <div class="modal-action">
+      <!-- if there is a button in form, it will close the modal -->
+      <button class="btn bg-[#DC3545] text-white hover:text-black">Close</button>
+    </div>
+  </form>
+</dialog>
+    </main>
+    <footer>
+
+    </footer>
+<!-- Scripts -->
+<script src="./JS/phone.js"></script>
+</body>
+</html>

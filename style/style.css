@@ -1,0 +1,17 @@
+.left-banner-image{
+    width: 15%; 
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.middle-banner-image{
+    width: 20%;
+    max-height: 50% ;
+}
+.right-banner-image{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 15%;
+}
+#banner-images{
+    margin-top: -20%;
+}
