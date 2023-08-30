@@ -69,6 +69,7 @@ const handleSearch = (isShowAll) =>{
     if(searchText){
         loadPhone(searchText, isShowAll);
         toggleLoadingSpinner(true);
+        searchField.value= '';
     }
 
 }
