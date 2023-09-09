@@ -12,10 +12,17 @@ const loadPhone= async (searchText='a', isShowAll)=>{
         const p= document.createElement('p')
         p.innerHTML=`<p id="#not_found" class="text-red-500">Search result for "${searchText}" not found! Search for any other model. </p>`
         notFound.appendChild(p);
+<<<<<<< HEAD
         setTimeout(() => {
             notFound.removeChild(p);
             
         }, 3000);
+=======
+        //Error message timeout
+        setTimeout(() => {
+            notFound.removeChild(p);
+        }, 2000);
+>>>>>>> 47090af5bfb8af0b132a9fc3101d655af6d64ff9
     }else{
         displayPhones(phones, isShowAll)
         const notFound= document.getElementById('not_found');
