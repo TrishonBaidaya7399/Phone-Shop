@@ -6,13 +6,16 @@ const loadPhone= async (searchText='a', isShowAll)=>{
     const data = await res.json();
     const phones= data.data;
     if(phones.length===0){
-        console.log('search result not found');
         toggleLoadingSpinner(false);
         const notFound= document.getElementById('not_found');
         notFound.classList.remove('hidden')
         const p= document.createElement('p')
-        p.innerHTML=`<p id="#not_found" class="text-red-500">Search result not found 😥</p>`
+        p.innerHTML=`<p id="#not_found" class="text-red-500">Search result for "${searchText}" not found! Search for any other model. </p>`
         notFound.appendChild(p);
+        setTimeout(() => {
+            notFound.removeChild(p);
+            
+        }, 3000);
     }else{
         displayPhones(phones, isShowAll)
         const notFound= document.getElementById('not_found');
@@ -28,7 +31,8 @@ const showAllContainer= document.getElementById('show-all-container');
 
 if(phones.length>9 && !isShowAll){
     showAllContainer.classList.remove('hidden');
-}else{
+}
+else{
     showAllContainer.classList.add('hidden');
 }
 //display only 9 items if showall is false
@@ -65,7 +69,9 @@ const handleSearch = (isShowAll) =>{
     if(searchText){
         loadPhone(searchText, isShowAll);
         toggleLoadingSpinner(true);
+        searchField.value= '';
     }
+   
 
 }
 const toggleLoadingSpinner= (isLoading) =>{
